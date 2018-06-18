@@ -341,6 +341,11 @@ public class MainActivity extends AppCompatActivity {
                 mProgress5.setProgress(progress);
             }
         }
+
+        @Override
+        public void onStatusChangedProgress(DownloadRequest downloadRequest) {
+
+        }
     }
 
     private String getBytesDownloaded(int progress, long totalBytes) {

@@ -454,6 +454,8 @@ class DownloadDispatcher extends Thread {
 
     private void updateDownloadState(DownloadRequest request, int state) {
         request.setDownloadState(state);
+        mDelivery.postStatusChanged(request);
+
     }
 
     private void updateDownloadComplete(DownloadRequest request) {
