@@ -68,11 +68,8 @@ public class DownloadRequestQueue {
 		public void postStatusChanged(final DownloadRequest request) {
 			mCallBackExecutor.execute(new Runnable() {
 				public void run() {
-					if (request.getDownloadListener() != null) {
-						request.getDownloadListener().onDownloadComplete(request.getDownloadId());
-					}
 					if (request.getStatusListener() != null) {
-						request.getStatusListener().onDownloadComplete(request);
+						request.getStatusListener().onStatusChangedProgress(request);
 					}
 				}
 			});
